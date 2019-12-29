@@ -31,20 +31,12 @@
   - [Feito Com](#feito-com)
 - [Começando](#come%C3%A7ando)
   - [Pré-requisitos](#pr%C3%A9-requisitos)
-  - [Estrutura de Arquivos](#estrutura-de-arquivos)
   - [Instalação](#instala%C3%A7%C3%A3o)
-    - [Passo Adicional no Android](#passo-adicional-no-android)
   - [Edição](#edi%C3%A7%C3%A3o)
-  - [Publicação](#publica%C3%A7%C3%A3o)
-- [Contribuição](#contribui%C3%A7%C3%A3o)
 - [Licença](#licen%C3%A7a)
 - [Contato](#contato)
 
 <!-- ABOUT THE PROJECT -->
-
-## Sobre o Projeto
-
-Este projeto visa a criação de um template que possa ser utilizado no momento de criação de projetos utilizando React Native, visto que o processo de instalação e configuração das libs no início de um projeto podem gerar certa complexidade e muitas vezes até erros que atrasam o processo, atrapalhando assim o fluxo de desenvolvimento.
 
 ### Feito Com
 
@@ -77,7 +69,7 @@ Abaixo segue o que foi utilizado na criação deste template:
 
 ## Começando
 
-Para conseguir utilizar o template, seja através do React Native CLI ou com uma cópia local dos arquivos, siga os passos abaixo.
+Frontend do Sistema HandStore
 
 ### Pré-requisitos
 
@@ -85,90 +77,13 @@ Antes de seguirmos para as configurações e uso do template, é ideal que você
 
 [Ambiente React Native (Android/iOS)](https://github.com/Rocketseat/ambiente-react-native)
 
-### Estrutura de Arquivos
-
-A estrutura de arquivos está da seguinte maneira:
-
-```bash
-rocketseat-advanced
-├── src/
-│   ├── config/
-│   │   └── ReactotronConfig.js
-│   ├── images/
-│   │   ├── rocketseat_logo_roxa.png
-│   │   └── rocketseat_logo.png
-│   ├── pages/
-│   │   └── Main/
-│   │       └── index.js
-│   ├── services/
-│   │   └── api.js
-│   ├── store/
-│   │   ├── ducks/
-│   │   │   └── index.js
-│   │   ├── sagas/
-│   │   │   └── index.js
-│   │   └── index.js
-│   ├── index.js
-│   └── routes.js
-├── .editorconfig
-├── .eslintrc.json
-├── .gitignore
-├── babel.config.js
-├── dependencies.json
-├── devDependencies.json
-├── index.js
-├── jsconfig.js
-├── LICENSE
-├── package.json
-└── README.md
-```
-
-Serão explicados os arquivos e diretórios na seção de [Edição](#edição).
-
 ### Instalação
 
 1. Para instalar e utilizar esse app o processo é bem simples,. basta executar os comandos a seguir:
 ```sh
 yarn install
 ```
-
-
 ---
-
-#### Passo Adicional no Android
-
-Para que os gestos sejam habilitados no Android é necessário um passo a mais, que é bem simples, abra o arquivo `android/app/src/main/java/<pacote_do_projeto>/MainActivity.java`, e começe importando os pacotes como abaixo:
-
-```java
-// ...
-import com.facebook.react.ReactActivity;
-// Importações adicionadas
-import com.facebook.react.ReactActivityDelegate;
-import com.facebook.react.ReactRootView;
-import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
-```
-
-Feito a importação vamos criar um método novo, logo abaixo do `getMainComponentName()`, ficando:
-
-```java
-public class MainActivity extends ReactActivity {
-  @Override
-  protected String getMainComponentName() { ... }
-  // Método adicionado
-  @Override
-  protected ReactActivityDelegate createReactActivityDelegate() {
-    return new ReactActivityDelegate(this, getMainComponentName()) {
-      @Override
-      protected ReactRootView createRootView() {
-        return new RNGestureHandlerEnabledRootView(MainActivity.this);
-      }
-    };
-  }
-}
-```
-
----
-
 ### Edição
 
 Nesta seção haverão instruções caso você queira editar o template, explicando para que os diretórios são utilizadas e também os arquivos de configuração.
@@ -222,42 +137,6 @@ Nesta seção haverão instruções caso você queira editar o template, explica
 - **jsconfig.json** - Arquivo de configuração do Javascript no Editor, ele é o responsável por ativar o Auto Complete de códigos Javascript na aplicação;
 
 - **package.json** - Diferente dos projetos comuns, esse arquivo tem as configurações necessárias para a publicação do Template no NPM, para saber mais sobre isso veja a seção abaixo.
-
-### Publicação
-
-Para publicar um template como esse o processo bastante simples e rápido.
-
-1. Crie uma conta no [site do NPM](https://www.npmjs.com/);
-
-2. Com a conta criada execute o comando abaixo e insira suas credenciais;
-
-```sh
-npm login
-```
-
-3. Basta abrir o arquivo `package.json` e modificar as informações de acordo com o seu template, mas as informações mais importantes são duas, o `name` e o `version`, que são os únicos que tem restrições, seguem abaixo as restrições:
-
-   1. O `name` sempre deve começar com o prefixo `react-native-template-` seguido do nome do seu template;
-   2. O template deve ser publicado em uma conta pessoal, pois quando publicado em uma **Organization** é acrescentado o prefixo `@<nome_da_organization>` no nome do pacote;
-   3. O `name` deve ser único, não podendo ser igual ao de um template já publicado;
-   4. A `version` deve ser atualizada a cada publicação, se o template está na versão **0.0.1** e é preciso publicar uma atualização no mesmo, a `version` deve ser diferente e superior a versão atual, por exemplo, **0.0.2**;
-
-4. Após configurar corretamente o `package.json` basta executar no terminal/prompt o comando `npm publish`;
-
-5. Com a publicação finalizada o template deve ficar disponível através do link `https://www.npmjs.com/package/react-native-template-<nome_do_template>`.
-
-<!-- CONTRIBUTING -->
-
-## Contribuição
-
-Contribuições são o que fazem a comunidade open source um lugar incrível para aprender, inspirar e criar. Qualquer contribuição que você fizer será **muito apreciada**.
-
-1. Faça um Fork do projeto
-2. Crie uma Branch para sua Feature (`git checkout -b feature/FeatureIncrivel`)
-3. Adicione suas mudanças (`git add .`)
-4. Comite suas mudanças (`git commit -m 'Adicionando uma Feature incrível!`)
-5. Faça o Push da Branch (`git push origin feature/FeatureIncrivel`)
-6. Abra uma Pull Request
 
 <!-- LICENSE -->
 
