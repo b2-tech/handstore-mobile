@@ -17,10 +17,10 @@
 <br />
 <p align="center">
   <a href="https://rocketseat.com.br">
-    <img src="https://s3-sa-east-1.amazonaws.com/rocketseat-cdn/rocketseat_logo_roxa.png" alt="Logo">
+    <img src="" alt="Logo">
   </a>
 
-  <h3 align="center">Template Rocketseat Advanced</h3>
+  <h3 align="center">HandStore - Mobile</h3>
 </p>
 
 <!-- TABLE OF CONTENTS -->
@@ -128,15 +128,11 @@ Serão explicados os arquivos e diretórios na seção de [Edição](#edição).
 
 ### Instalação
 
-1. Para instalar e utilizar esse template o processo é bem simples, basta criar um projeto novo utilizando o comando:
-
+1. Para instalar e utilizar esse app o processo é bem simples,. basta executar os comandos a seguir:
 ```sh
-react-native init AwesomeExample --template rocketseat-advanced
+yarn install
 ```
 
-2. Depois do projeto criado você pode deletar o arquivo `App.js` da raiz, pois o arquivo `index.js` agora aponta para a pasta **src**.
-
-Com isso o projeto será criado com todas as dependências do template devidamente instaladas e linkadas, tal como os arquivos de configuração que são copiados para o projeto.
 
 ---
 
@@ -274,4 +270,4 @@ Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
 
 ## Contato
 
-Rocketseat - [Github](https://github.com/rocketseat) - **oi@rocketseat.com.br**
+Rocketseat - [B2tech](https://github.com/b2-tech) - **tecnologia@b2tech.com.br**
