@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {Component} from 'react';
+
 import {
   View,
   Text,
@@ -9,68 +10,13 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import Icon from 'react-native-vector-icons/Ionicons';
-
-import logo from '~/assets/images/shop.png';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-const {width: WIDTH} = Dimensions.get('window');
+import api from '~/services/api';
 
-export default function Login() {
-  return (
-    <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#238AF2" />
-      <View style={styles.imageContainer}>
-        <Image source={logo} style={styles.logo} />
-        <Text style={styles.logoText}>HandStore</Text>
-      </View>
-      <View>
-        <View style={styles.inputContainer}>
-          <TextInput
-            style={styles.input}
-            placeholder={'Usuario'}
-            placeholderTextColor={'#64798A'}
-            underlineColorAndroid="transparent"
-          />
-          <Icon
-            style={styles.inputIcon}
-            name="md-person"
-            size={20}
-            color="#64798A"
-          />
-        </View>
-      </View>
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.input}
-          placeholder={'Senha'}
-          secureTextEntry={true}
-          placeholderTextColor={'#64798A'}
-          underlineColorAndroid="transparent"
-        />
-        <Icon
-          style={styles.inputIcon}
-          name="md-lock"
-          size={20}
-          color="#64798A"
-        />
-        <TouchableOpacity style={styles.btnEye}>
-          <Icon name={'ios-eye'} size={20} color="#64798A" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.btnLogin}>
-          <Text style={styles.btnLoginText}>Login</Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.footerContainer}>
-        <TouchableOpacity>
-          <Text>Esqueci a senha</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text>Criar uma conta</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
-}
+import Icon from 'react-native-vector-icons/Ionicons';
+import logo from '~/assets/images/shop.png';
+
+const {width: WIDTH} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
@@ -151,3 +97,62 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
 });
+
+export default class Login extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <StatusBar barStyle="light-content" backgroundColor="#238AF2" />
+        <View style={styles.imageContainer}>
+          <Image source={logo} style={styles.logo} />
+          <Text style={styles.logoText}>HandStore</Text>
+        </View>
+        <View>
+          <View style={styles.inputContainer}>
+            <TextInput
+              style={styles.input}
+              placeholder={'Usuario'}
+              placeholderTextColor={'#64798A'}
+              underlineColorAndroid="transparent"
+            />
+            <Icon
+              style={styles.inputIcon}
+              name="md-person"
+              size={20}
+              color="#64798A"
+            />
+          </View>
+        </View>
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.input}
+            placeholder={'Senha'}
+            secureTextEntry={true}
+            placeholderTextColor={'#64798A'}
+            underlineColorAndroid="transparent"
+          />
+          <Icon
+            style={styles.inputIcon}
+            name="md-lock"
+            size={20}
+            color="#64798A"
+          />
+          <TouchableOpacity style={styles.btnEye}>
+            <Icon name={'ios-eye'} size={20} color="#64798A" />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btnLogin}>
+            <Text style={styles.btnLoginText}>Login</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.footerContainer}>
+          <TouchableOpacity>
+            <Text>Esqueci a senha</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text>Criar uma conta</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  }
+}
